@@ -38,34 +38,26 @@ This project was implemented using a cloud analytics stack designed for event-le
 
 ## Dataset Description
 
-The analysis is built on the **Google Analytics 4 ecommerce BigQuery export sample dataset**, which simulates a production ecommerce analytics implementation.
+This analysis is based on the public **Google Analytics 4 (GA4) ecommerce sample dataset** available in BigQuery (`bigquery-public-data.ga4_obfuscated_sample_ecommerce`). The dataset contains anonymized event-level logs that simulate a production ecommerce analytics environment.
 
-### Dataset Characteristics
+The project uses GA4 event records such as **page views, product interactions, checkout actions, and purchases**, along with session identifiers, acquisition attributes, device categories, and transaction metadata. These fields enable reconstruction of session-level purchase journeys and measurement of funnel performance.
 
-The dataset contains event-level GA4 logs including:
-
-* **User interactions:** `page_view`, `view_item`, `add_to_cart`, `begin_checkout`, `purchase`
-* **Session identifiers:** `ga_session_id`, `user_pseudo_id`
-* **Transaction metadata:** `transaction_id`, revenue fields
-* **Acquisition attributes:** traffic medium and source
-* **Device information:** desktop, mobile, tablet classification
-* **Time dimensions:** event timestamps and dates
-
-The dataset covers a fixed historical period (late 2020 – early 2021) and enables full reconstruction of user purchase journeys.
-
-### Modeling Approach
-
-Raw events are transformed into analytical views:
-
-1. **Session assembly** — reconstruct unique sessions from event streams
-2. **Funnel flags** — assign binary indicators for funnel steps
-3. **Daily aggregation** — compute conversion KPIs over time
-4. **Segment analysis** — evaluate acquisition and device performance
-5. **Time-to-purchase metrics** — measure behavioral latency
-
-This layered modeling structure reflects analytics engineering best practices.
+The dataset spans a fixed historical period (late 2020 to early 2021) and supports time-series analysis of conversion behavior and revenue trends.
 
 ---
+
+## Modeling Approach
+
+Event-level GA4 data is transformed into structured analytical views that support funnel and revenue analysis:
+
+* **Session reconstruction** — events are grouped into unique sessions using GA4 session identifiers
+* **Funnel flags** — session-level indicators capture progression through key funnel steps
+* **Daily aggregation** — conversion metrics and revenue KPIs are summarized over time
+* **Segment analysis** — performance is evaluated by acquisition channel and device
+* **Time-to-purchase metrics** — latency between funnel milestones is measured
+
+This layered SQL modeling approach converts raw event streams into stable business metrics suitable for executive reporting and behavioral diagnostics.
+
 
 ## Funnel Performance Analysis
 
@@ -182,21 +174,7 @@ These actions focus on improving efficiency without proportional increases in ac
 
 ---
 
-## Dashboard Preview
 
-*(Insert dashboard screenshots here)*
-
----
-
-## Project Structure
-
-```
-/sql        → BigQuery SQL modeling views
-/dashboard  → Dashboard screenshots
-README.md   → Project case study
-```
-
----
 
 ## Conclusion
 
