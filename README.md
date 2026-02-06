@@ -2,22 +2,17 @@
 
 ## Overview
 
-This project analyzes end-to-end ecommerce funnel performance using event-level behavioral data transformed in **Google BigQuery** and visualized through **Looker Studio** dashboards.
+This case study evaluates end-to-end ecommerce funnel performance using event-level behavioral data modeled in Google BigQuery and visualized through interactive Looker Studio dashboards.
 
-The goal is to translate raw analytics events into structured business metrics that explain:
+The analysis examines how users progress through the purchase funnel, how revenue is distributed across acquisition segments, and where inefficiencies or friction arise in the conversion journey. By combining funnel conversion metrics, revenue indicators, and segment-level performance analysis, the study provides a structured view of the factors influencing monetization outcomes.
 
-* Where users drop off in the purchase funnel
-* How revenue is generated and distributed
-* Which acquisition segments drive efficient growth
-* Where friction exists in the conversion journey
-
-The result is a recruiter-ready analytics case study that mirrors real-world product and growth analytics workflows.
+This framework supports systematic assessment of user behavior and highlights opportunities to improve conversion efficiency and overall funnel performance.
 
 ---
 
 ## Live Dashboard
 
-👉 **Interactive dashboard:** 
+👉 **Interactive dashboard:**   https://lookerstudio.google.com/s/tyfZr_mxm-I
 
 ![Executive Dashboard](pictures/d1.png)
 
@@ -27,17 +22,17 @@ The result is a recruiter-ready analytics case study that mirrors real-world pro
 
 ---
 
-## Technologies & Analytical Stack
+## Technologies and Analytical Stack
 
-This project uses a modern analytics architecture aligned with industry practices:
+This project was implemented using a cloud analytics stack designed for event-level behavioral analysis and performance reporting:
 
-* **Google BigQuery (SQL)** — Cloud data warehouse used to model large-scale event data and compute funnel KPIs through layered SQL views.
+* **Google BigQuery** — Analytical data warehouse used to query and aggregate GA4 event data, supporting scalable SQL transformations and computation of session-level funnel metrics and revenue KPIs.
 
-* **SQL Data Modeling** — A semantic analytics layer transforms raw GA4 events into session-level funnel metrics, segment aggregations, and time-to-purchase statistics.
+* **SQL Modeling** — Structured SQL views organize event streams into reusable analytical layers, enabling consistent calculation of funnel conversion rates, segment performance metrics, and time-to-purchase statistics.
 
-* **Google Analytics 4 BigQuery Export Dataset** — Event-level ecommerce dataset containing user interactions, session metadata, and transaction records.
+* **Google Analytics 4 (GA4) BigQuery Export Dataset** — Source ecommerce event dataset containing user interactions, session identifiers, acquisition attributes, and transaction metadata required to reconstruct purchase journeys.
 
-* **Looker Studio** — Interactive visualization platform used to design executive dashboards for performance monitoring and behavioral diagnostics.
+* **Looker Studio** — Dashboarding platform used to build interactive visualizations for monitoring funnel performance, revenue trends, and acquisition quality.
 
 ---
 
