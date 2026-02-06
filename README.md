@@ -18,7 +18,7 @@ The result is a recruiter-ready analytics case study that mirrors real-world pro
 ## Live Dashboard
 
 👉 **Interactive dashboard:**
-*Insert Looker Studio link here*
+![Executive Dashboard](pictures/d1.png)
 
 ---
 
