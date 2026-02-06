@@ -17,8 +17,13 @@ The result is a recruiter-ready analytics case study that mirrors real-world pro
 
 ## Live Dashboard
 
-👉 **Interactive dashboard:**
+👉 **Interactive dashboard:** 
+
 ![Executive Dashboard](pictures/d1.png)
+
+![Executive Dashboard](pictures/d2.png)
+
+![Executive Dashboard](pictures/dd3.png)
 
 ---
 
