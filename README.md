@@ -58,128 +58,101 @@ Event-level GA4 data is transformed into structured analytical views that suppor
 
 This layered SQL modeling approach converts raw event streams into stable business metrics suitable for executive reporting and behavioral diagnostics.
 
-
+---
 ## Funnel Performance Analysis
 
 ### Executive Summary
 
-Overall traffic volume is stable, but monetization performance is driven more by **mid-funnel efficiency and segment quality** than by raw session growth.
+Overall traffic volume remains relatively stable across the reporting period, but monetization performance is driven primarily by **mid-funnel efficiency and acquisition segment quality**, rather than by raw session growth.
 
-The largest performance differences emerge across acquisition segments and user types, where lower-volume returning-user segments demonstrate materially higher revenue efficiency than high-volume new-user traffic.
+The largest performance differences appear across acquisition segments and user types. Several lower-volume returning-user segments demonstrate materially higher revenue efficiency than high-volume new-user traffic. Funnel diagnostics also show variability in checkout behavior and purchase timing, indicating friction and inconsistency in parts of the user journey.
 
-Funnel diagnostics show variability in checkout behavior and purchase timing, suggesting friction and inconsistency in user journeys. Improving mid-funnel progression and prioritizing high-efficiency segments represent the clearest opportunities for optimization.
+Together, the dashboards indicate that improving mid-funnel progression and prioritizing high-efficiency segments represent the clearest opportunities to increase revenue efficiency without proportional traffic expansion.
 
 ---
 
-## Funnel Structure & Conversion Performance
+### Funnel Structure & Conversion Performance
 
-**Charts used:**
+**Charts referenced:** Funnel Step Conversion Rates; Traffic vs Conversion Rate
 
-* Funnel Step Conversion Rates
-* Traffic vs Conversion Rate
-
-The funnel tracks:
+The funnel follows the progression:
 
 **Session → Product View → Checkout → Purchase**
 
-Findings:
+Key observations:
 
 * Session-to-purchase conversion is low relative to total traffic
-* The largest drop-off occurs between product interaction and checkout initiation
-* Checkout-to-purchase conversion is comparatively stronger and stable
+* The largest and most consistent drop-off occurs between product interaction and checkout initiation
+* Checkout-to-purchase conversion is comparatively stronger and more stable
 
-Revenue fluctuations align more closely with conversion efficiency than with session volume, indicating that **mid-funnel optimization has higher leverage than traffic expansion**.
-
----
-
-## Revenue Performance & Efficiency
-
-**Charts used:**
-
-* Revenue Over Time
-* Orders vs AOV
-* Revenue per Session
-
-Revenue trends generally follow traffic but show spikes driven by high-value transactions. These outliers affect averages and should be interpreted cautiously.
-
-Revenue per session fluctuates alongside conversion performance, reinforcing that monetization efficiency depends primarily on funnel effectiveness rather than raw traffic growth.
+Revenue variability aligns more closely with changes in conversion efficiency than with fluctuations in session volume. This indicates that **mid-funnel optimization has greater impact on revenue than increasing top-of-funnel traffic alone**.
 
 ---
 
-## Acquisition & Segment Performance
+### Revenue Performance & Efficiency
 
-**Charts used:**
+**Charts referenced:** Revenue Over Time; Orders vs AOV; Revenue per Session
 
-* Segment Performance Summary table
-* Revenue by Device and Channel
-* Traffic Medium / Session → Purchase Conversion matrix
+Revenue trends broadly track traffic patterns but include periodic spikes associated with high-value transactions. These outliers influence averages and should be interpreted cautiously.
 
-The largest individual traffic segments are concentrated in **new-user organic traffic**, including:
-
-* Organic · Desktop · New users — **57,975 sessions**
-* Organic · Mobile · New users — **39,668 sessions**
-
-These segments generate high volume but modest revenue efficiency.
-
-In contrast, certain returning-user segments deliver significantly higher monetization efficiency. For example:
-
-**Referral · Desktop · Returning users**
-
-* 15,019 sessions
-* ~0.03 session→purchase conversion
-* $38,381 revenue
-* **$2.56 revenue per session**
-
-This represents more than **5× higher revenue per session** than large new-user organic segments.
-
-Traffic quality varies substantially by segment, suggesting that prioritizing efficient channels may improve ROI more effectively than increasing session counts.
+Revenue per session moves in parallel with conversion performance, reinforcing that monetization efficiency is primarily driven by funnel effectiveness rather than raw traffic growth. Periods of higher revenue per session correspond to improved session-to-purchase conversion.
 
 ---
 
-## Funnel Friction & Time to Purchase
+### Acquisition & Segment Performance
 
-**Charts used:**
+**Charts referenced:** Segment Performance Summary Table; Revenue by Device and Channel; Traffic Medium / Session → Purchase Conversion Matrix
 
-* Time to Purchase (Median vs P90)
-* P90 View → Checkout & Median Checkout → Purchase
-* Checkout Without Cart vs Cart Event Coverage
+Performance is reported at the **segment-row level** (Traffic Medium × Device Category × New vs Returning). The largest rows by volume are **new-user organic traffic**, including:
 
-A persistent gap between median and 90th percentile purchase times indicates that while many users convert quickly, a subset experiences extended journeys.
+* **Organic · Desktop · New users — 57,975 sessions**
+* **Organic · Mobile · New users — 39,668 sessions**
 
-This long-tail behavior suggests friction or inconsistent checkout flows. Variability in expected funnel steps may reflect either non-linear user behavior or instrumentation inconsistencies.
+These segments contribute the most sessions but relatively low revenue efficiency.
 
-Standardizing checkout paths and reducing early friction could shorten time-to-conversion and improve efficiency.
+By contrast, **Referral · Desktop · Returning users** delivers **15,019 sessions**, ~**0.03** session-to-purchase conversion, **$38,381 revenue**, and **$2.56 revenue per session** — over **5× higher revenue per session** than the large new-user organic rows.
+
+The dashboards show clear variation in monetization by channel, device, and user type, indicating that prioritizing high-efficiency segments is likely more impactful than increasing total traffic volume.
 
 ---
 
-## Analytical Limitations
+### Funnel Friction & Time to Purchase
 
-* Extreme transaction values introduce volatility in averages
+**Charts referenced:** Time to Purchase (Median vs P90); P90 View → Checkout & Median Checkout → Purchase; Checkout Without Cart vs Cart Event Coverage
+
+A persistent gap between median and 90th percentile purchase times indicates that while many users complete purchases quickly, a subset experiences extended conversion journeys.
+
+This long-tail behavior suggests friction or inconsistency in checkout flows. Variability in expected funnel steps may reflect non-linear user behavior or instrumentation inconsistencies. Standardizing checkout paths and reducing early friction could shorten time-to-conversion and improve overall efficiency.
+
+---
+
+### Analytical Limitations
+
+* Extreme transaction values introduce volatility in revenue averages
 * Small segments produce unstable conversion estimates
-* Some anomalies may reflect tracking gaps rather than behavior
+* Some anomalies may reflect tracking gaps rather than true behavior
 
-These limitations highlight the importance of data validation and cautious interpretation.
+These factors highlight the importance of ongoing data validation and cautious interpretation.
 
 ---
 
-## Recommendations
+### Recommendations
 
-1. Improve mid-funnel progression to increase checkout initiation
-2. Prioritize investment in high-efficiency returning-user segments
-3. Validate tracking and investigate extreme revenue outliers
-4. Simplify and standardize checkout flows
-5. Apply minimum sample thresholds when evaluating segments
+* Improve mid-funnel progression to increase checkout initiation
+* Prioritize investment in high-efficiency returning-user segments
+* Validate tracking and investigate extreme revenue outliers
+* Simplify and standardize checkout flows
+* Apply minimum sample thresholds when evaluating segment performance
 
 These actions focus on improving efficiency without proportional increases in acquisition spend.
 
 ---
 
+### Conclusion
+
+Revenue performance is constrained more by **funnel efficiency and segment quality** than by traffic shortages. Mid-funnel friction and acquisition variability represent the primary optimization levers.
+
+Targeted improvements in checkout progression and segment prioritization can materially increase monetization without expanding traffic volume. This analysis demonstrates how structured data modeling and dashboard analytics support clear, actionable business insights.
 
 
-## Conclusion
 
-Revenue performance is constrained more by funnel efficiency and segment quality than by traffic shortages.
-
-Mid-funnel friction and acquisition variability represent the primary optimization levers. Targeted improvements in checkout progression and segment prioritization can materially increase monetization without expanding traffic volume.
-
-This project demonstrates how structured data modeling and dashboard analytics support actionable business insights.
